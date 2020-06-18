@@ -1,8 +1,7 @@
 #!/bin/bash -e
 
 echo "Source the pokey"
-. ./oe-init-build-env build
-echo "Build the pokey"
-if [ -n "$1" ]; then
-    bitbake $1
-fi
+cd /poky
+. ./oe-init-build-env /poky/workdir
+echo "Build the pokey [$1]"
+bitbake $1
